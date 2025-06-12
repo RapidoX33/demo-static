@@ -3,6 +3,8 @@ backend:
   name: github
   repo: RapidoX33/demo-static    
   branch: main
+  base_url: https://netlify-cms-auth.pizzly.app
+  auth_endpoint: oauth/authorize
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
