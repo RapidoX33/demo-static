@@ -1,10 +1,10 @@
 # --- Produktion mit GitHub-OAuth ------------
 backend:
   name: github
-  repo: RapidoX33/demo-static    # GitHub-Repo (User/Reponame)
+  repo: RapidoX33/demo-static    
   branch: main
-  auth_type: implicit               # kein extra Server nötig
-  client_id: Ov23liDFRkPnp1RJw8TM         # aus GitHub-OAuth-App
+  auth_type: implicit
+  client_id: Ov23liDFRkPnp1RJw8TM
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
