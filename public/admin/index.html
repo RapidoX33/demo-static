@@ -4,10 +4,48 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CMS</title>
-    <link href="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.css" rel="stylesheet" />
+    <script>
+      // GitHub Personal Access Token Authentication
+      if (!localStorage.getItem('github-token')) {
+        const token = prompt('Bitte geben Sie Ihr GitHub Personal Access Token ein:');
+        if (token) {
+          localStorage.setItem('github-token', token);
+        }
+      }
+    </script>
   </head>
 
   <body>
-    <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" type="module"></script>
+    <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
+    <script>
+      const token = localStorage.getItem('github-token');
+      if (token) {
+        window.CMS_MANUAL_INIT = true;
+        
+        window.CMS.init({
+          config: {
+            backend: {
+              name: 'github',
+              repo: 'RapidoX33/demo-static',
+              branch: 'main',
+              token: token
+            },
+            media_folder: "public/images/uploads",
+            public_folder: "/images/uploads",
+            collections: [{
+              name: "pages",
+              label: "Seiten",
+              folder: "src/pages",
+              create: true,
+              slug: "{{slug}}",
+              fields: [
+                { label: "Titel", name: "title", widget: "string" },
+                { label: "Body", name: "body", widget: "markdown" }
+              ]
+            }]
+          }
+        });
+      }
+    </script>
   </body>
 </html>

@@ -1,0 +1,9 @@
+name = "demo-static-oauth"
+main = "oauth-worker.js"
+compatibility_date = "2023-05-18"
+
+[vars]
+# Setzen Sie hier Ihren GitHub Client Secret
+
+[[env.production.vars]]
+GITHUB_CLIENT_SECRET = "YOUR_GITHUB_CLIENT_SECRET"

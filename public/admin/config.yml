@@ -3,7 +3,6 @@ backend:
   name: github
   repo: RapidoX33/demo-static    
   branch: main
-  auth_type: token
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
