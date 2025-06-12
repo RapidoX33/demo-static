@@ -1,7 +1,9 @@
 # --- Produktion mit GitHub-OAuth ------------
 backend:
-  name: git-gateway
+  name: github
+  repo: RapidoX33/demo-static    
   branch: main
+  base_url: https://auth.swissred.academy
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
