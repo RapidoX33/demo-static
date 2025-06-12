@@ -3,6 +3,8 @@ backend:
   name: github
   repo: RapidoX33/demo-static    
   branch: main
+  auth_type: pkce
+  app_id: Ov23liDFRkPnp1RJw8TM
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
