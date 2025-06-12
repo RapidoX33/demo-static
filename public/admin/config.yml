@@ -1,4 +1,11 @@
-backend: { name: git-gateway }
+# --- Produktion mit GitHub-OAuth ------------
+backend:
+  name: github
+  repo: RapidoX33/demo-static    # GitHub-Repo (User/Reponame)
+  branch: main
+  auth_type: implicit               # kein extra Server nötig
+  client_id: Ov23liDFRkPnp1RJw8TM         # aus GitHub-OAuth-App
+
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
 
@@ -6,8 +13,8 @@ collections:
   - name: "pages"
     label: "Seiten"
     folder: "src/pages"
-    create: true       # Kunde darf neue Seiten anlegen
+    create: true
     slug: "{{slug}}"
     fields:
-      - { label: Titel, name: title, widget: string }
-      - { label: Body,  name: body,  widget: markdown }
+      - { label: "Titel", name: "title", widget: "string" }
+      - { label: "Body",  name: "body",  widget: "markdown" }
