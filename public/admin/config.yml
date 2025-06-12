@@ -1,0 +1,13 @@
+backend: { name: git-gateway }
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Seiten"
+    folder: "src/pages"
+    create: true       # Kunde darf neue Seiten anlegen
+    slug: "{{slug}}"
+    fields:
+      - { label: Titel, name: title, widget: string }
+      - { label: Body,  name: body,  widget: markdown }
