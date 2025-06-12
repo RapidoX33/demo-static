@@ -7,9 +7,10 @@
   </head>
 
   <body>
+    <script src="https://unpkg.com/netlify-identity-widget@^1.9/build/netlify-identity-widget.js"></script>
     <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
     <script>
-      // Warten bis CMS geladen ist
+      // Netlify Identity Integration
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
           if (!user) {
